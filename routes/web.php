@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\OrganizationController;
+use App\Http\Controllers\PatchesController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +43,8 @@ Route::delete('organization/{organzation}/contact/{contact}', [OrganizationContr
 
 Route::resource('device', DeviceController::class)
     ->only(['index', 'show', 'destroy']);
+Route::get('device/patches/{device}', [PatchesController::class, 'show'])->name('device.patches');
+Route::put('device/patches/{patches}', [PatchesController::class, 'patching'])->name('device.patch.install');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\OrganizationRequest;
+use App\Http\Resources\DeviceCollection;
 use App\Http\Resources\OrganizationCollection;
 use App\Models\Contacts;
+use App\Models\Devices;
 use App\Models\Organizations;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -63,7 +65,9 @@ class OrganizationController extends Controller
     public function show(Organizations $organization)
     {
         return Inertia::render('Organization/Show', [
-            'organization' => $organization
+            'organization' => $organization,
+            'devices' => new DeviceCollection(Devices::where('organization_ids', $organization->id)->get())
+            // 'devices' => Devices::where('organization_ids', $organization->id)->get()
         ]);
     }
 

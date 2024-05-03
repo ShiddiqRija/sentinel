@@ -38,42 +38,39 @@ export default function OrganizationInfo({ item }) {
 
             <Grid.Col span={{ base: 6, xl: 12 }}>
                 <Paper shadow="md" p="sm" radius="sm" className="space-y-1">
-                    <Text fz="sm">Address</Text>
+                    <Text fz="sm" fw={700}>
+                        Address
+                    </Text>
                     <Text fw={150} c="dimmed">
                         {item.address}
                     </Text>
 
-                    <Group grow>
-                        <div>
-                            <Text fz="sm">City</Text>
-                            <Text fw={150} c="dimmed">
-                                {item.city}
-                            </Text>
-                        </div>
+                    <Text fz="sm" fw={700}>
+                        City
+                    </Text>
+                    <Text fw={150} c="dimmed">
+                        {item.city}
+                    </Text>
 
-                        <div>
-                            <Text fz="sm">State</Text>
-                            <Text fw={150} c="dimmed">
-                                {item.state}
-                            </Text>
-                        </div>
-                    </Group>
+                    <Text fz="sm" fw={700}>
+                        State
+                    </Text>
+                    <Text fw={150} c="dimmed">
+                        {item.state}
+                    </Text>
 
-                    <Group grow>
-                        <div>
-                            <Text fz="sm">Zip</Text>
-                            <Text fw={150} c="dimmed">
-                                {item.zip}
-                            </Text>
-                        </div>
-
-                        <div>
-                            <Text fz="sm">Country</Text>
-                            <Text fw={150} c="dimmed">
-                                {item.country}
-                            </Text>
-                        </div>
-                    </Group>
+                    <Text fz="sm" fw={700}>
+                        Zip
+                    </Text>
+                    <Text fw={150} c="dimmed">
+                        {item.zip}
+                    </Text>
+                    <Text fz="sm" fw={700}>
+                        Country
+                    </Text>
+                    <Text fw={150} c="dimmed">
+                        {item.country}
+                    </Text>
                 </Paper>
 
                 <Button

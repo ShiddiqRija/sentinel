@@ -18,16 +18,17 @@ return new class extends Migration
             $table->string('media_type');
             $table->string('model');
             $table->string('serial_number');
-            $table->string('partitions');
-            $table->string('interface');
+            $table->string('bus_type');
+            // $table->string('interface');
             $table->string('operational_status');
             $table->string('health_status');
             $table->string('firmware_version');
-            $table->string('drive');
-            $table->string('free_space');
-            $table->string('used_space');
-            $table->string('total_space');
+            $table->bigInteger('size');
+            $table->bigInteger('free');
+            $table->longText('drives');
+            $table->enum('status', ['active', 'history'])->default('active');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

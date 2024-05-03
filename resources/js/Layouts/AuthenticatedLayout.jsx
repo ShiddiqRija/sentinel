@@ -61,7 +61,7 @@ export default function Authenticated({ user, children }) {
                 </div>
             </nav>
 
-            <main className="pl-80 bg-slate-200 min-h-screen">{children}</main>
+            <main className="pl-[18rem] bg-slate-200 min-h-screen">{children}</main>
         </>
     );
 }

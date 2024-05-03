@@ -5,10 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Disks extends Model
 {
-    use HasFactory, HasUuids;
+    use HasFactory;
+    use HasUuids;
+    use SoftDeletes;
 
     protected $fillable = [
         'device_ids',
@@ -16,14 +19,14 @@ class Disks extends Model
         'media_type',
         'model',
         'serial_number',
-        'partitions',
-        'interface',
+        'bus_type',
+        // 'interface',
         'operational_status',
         'health_status',
         'firmware_version',
-        'drive',
-        'free_space',
-        'used_space',
-        'total_space',
+        'size',
+        'free',
+        'drives',
+        'status',
     ];
 }

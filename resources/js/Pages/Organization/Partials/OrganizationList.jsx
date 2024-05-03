@@ -3,6 +3,7 @@ import { router } from "@inertiajs/react";
 import {
     Alert,
     Button,
+    Container,
     Image,
     SimpleGrid,
     Text,
@@ -62,7 +63,7 @@ export default function OrganizationList({ data }) {
         : [];
 
     return (
-        <>
+        <Container my="sm" fluid>
             <div className="space-y-2 lg:flex lg:justify-between lg:space-y-0">
                 <Button
                     leftSection={<IconPlus size={16} />}
@@ -98,6 +99,6 @@ export default function OrganizationList({ data }) {
                     No organization data found
                 </Alert>
             )}
-        </>
+        </Container>
     );
 }

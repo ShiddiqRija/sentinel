@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('battery_full_Charge_cap');
             $table->string('cycle_count');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

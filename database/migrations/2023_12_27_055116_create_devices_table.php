@@ -14,24 +14,9 @@ return new class extends Migration
         Schema::create('devices', function (Blueprint $table) {
             $table->uuid('id')->unique();
             $table->foreignUuid('organization_ids')->references('id')->on('organizations')->onDelete('cascade');
-            $table->string('machine_name');
-            $table->string('domain');
-            $table->string('ip_address');
-            $table->string('os_edition');
-            $table->string('os_version');
-            $table->string('os_build');
-            $table->string('office_version');
-            $table->string('vendor');
-            $table->string('model');
-            $table->string('serial_number');
-            $table->string('motherboard');
-            $table->string('processor');
-            $table->string('memory');
-            $table->string('video_card');
-            $table->string('sound');
-            $table->string('system_drive');
-            $table->string('mac_address');
+            $table->uuid('device_info_ids')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

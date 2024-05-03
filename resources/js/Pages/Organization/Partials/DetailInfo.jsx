@@ -1,11 +1,10 @@
 import { Paper, Tabs, rem } from "@mantine/core";
 import { IconDeviceDesktop, IconUsers } from "@tabler/icons-react";
 import ContactView from "./ContactView";
-import DeviceView from "./DeviceView";
+import DeviceList from "@/Pages/Device/Partials/DeviceList";
 
-export default function DetailInfo({ organization }) {
+export default function DetailInfo({ organization, devices }) {
     const iconStyle = { width: rem(12), height: rem(12) };
-
     return (
         <Paper shadow="md" p="xs">
             <Tabs variant="outline" defaultValue="devices">
@@ -29,7 +28,7 @@ export default function DetailInfo({ organization }) {
                 </Tabs.Panel>
 
                 <Tabs.Panel value="devices" mt="md">
-                    <DeviceView />
+                    <DeviceList data={devices} />
                 </Tabs.Panel>
             </Tabs>
         </Paper>
